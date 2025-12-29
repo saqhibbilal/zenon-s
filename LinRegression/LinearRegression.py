@@ -13,7 +13,7 @@ class LinearRegression:
 
     def fit(self,X,y): 
         n_samples, n_features = X.shape
-        self.weights = np.zeroes(n_features)
+        self.weights = np.zeros(n_features)
         self.bias = 0 
 
 
