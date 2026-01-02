@@ -3,6 +3,8 @@ from sklearn.model_selection import train_test_split
 from sklearn import datasets
 import matplotlib.pyplot as plt
 from LogisticRegression import LogisticRegression
+import matplotlib.pyplot as plt
+
 
 bc = datasets.load_breast_cancer()
 x,y = bc.data, bc.target
@@ -17,3 +19,18 @@ def accuracy(y_pred, y_test):
     
 acc = accuracy(y_pred, y_test)
 print("Accuracy:", acc)    
+
+# take first 100 samples for clean visualization
+n = 100
+plt.figure(figsize=(10, 4))
+
+plt.plot(y_test[:n], label="Actual", marker='o')
+plt.plot(y_pred[:n], label="Predicted", marker='x')
+
+plt.title("Logistic Regression: Actual vs Predicted")
+plt.xlabel("Sample Index")
+plt.ylabel("Class (0 or 1)")
+plt.legend()
+plt.grid(True)
+
+plt.show()
